@@ -50,3 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# CDT-specific (C/C++ Development Tooling)
+.cproject
+.project
+
+.settings/
+debug/
