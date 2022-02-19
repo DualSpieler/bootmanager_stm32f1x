@@ -52,17 +52,17 @@
 /* Entry Point */
 ENTRY(Reset_Handler)
 
-/* Highest address of the user mode stack */
+/* Highest address of the user mode stack, 5000h - 20480 - 20kB */
 _estack = 0x20005000;    /* end of RAM */
 
 _Min_Heap_Size = 0;      /* required amount of heap  */
-_Min_Stack_Size = 0x400; /* required amount of stack */
+_Min_Stack_Size = 0x400; /* required amount of stack, 1024byte - 1kB */
 
 /* Memories definition */
 MEMORY
 {
   RAM (xrw)		: ORIGIN = 0x20000000, LENGTH = 20K
-  ROM (rx)		: ORIGIN = 0x8000000, LENGTH = 64K
+  ROM (rx)		: ORIGIN = 0x8000000, LENGTH = 7K   /*< boot manager size if 7kB, Refer: Memorymap in Doc folder */
 }
 
 /* Sections */
@@ -146,7 +146,7 @@ SECTIONS
   } >ROM
 
   /* Used by the startup to initialize data */
-  _sidata = LOADADDR(.data);
+  _sidata = LOADADDR(.data); /*< LOADADDR returns the absolute load address of named section */
 
   /* Initialized data sections into RAM memory */
   .data : 

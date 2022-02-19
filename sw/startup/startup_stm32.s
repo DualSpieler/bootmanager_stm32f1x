@@ -15,6 +15,7 @@
 
 .global g_pfnVectors
 .global Default_Handler
+.global SystemInit
 
 /* start address for the initialization values of the .data section.
 defined in linker script */
@@ -42,12 +43,12 @@ defined in linker script */
   .type Reset_Handler, %function
 Reset_Handler:
   ldr   r0, =_estack
-  mov   sp, r0          /* set stack pointer */
+  mov   sp, r0          /* ##1 set stack pointer, by default main stack pointer is selected */
 
 /* Copy the data segment initializers from flash to SRAM */
-  ldr r0, =_sdata
-  ldr r1, =_edata
-  ldr r2, =_sidata
+  ldr r0, =_sdata /* ## start add of .data section, absolute memory is flash, virtual memory is ram*/
+  ldr r1, =_edata /* ## end add of .data section */
+  ldr r2, =_sidata /* ## absolute load address of .data section */
   movs r3, #0
   b LoopCopyDataInit
 
@@ -403,6 +404,6 @@ g_pfnVectors:
 	.weak	DMA2_Channel4_5_IRQHandler
 	.thumb_set DMA2_Channel4_5_IRQHandler,Default_Handler
 	
-	.weak	SystemInit
+	.weak	SystemInit /*< System_Init funciton is implemented in core.c file */
 
 /************************ (C) COPYRIGHT Ac6 *****END OF FILE****/
