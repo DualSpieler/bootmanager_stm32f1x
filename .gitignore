@@ -54,6 +54,4 @@ dkms.conf
 # CDT-specific (C/C++ Development Tooling)
 .cproject
 .project
-
-.settings/
 debug/
