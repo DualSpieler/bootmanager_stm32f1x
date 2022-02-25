@@ -8,10 +8,13 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include sys/subdir.mk
--include startup/subdir.mk
+-include platform/comm/src/subdir.mk
+-include myLib/queue/src/subdir.mk
+-include drv/uart/src/subdir.mk
+-include drv/gpio/src/subdir.mk
 -include drv/core/src/subdir.mk
 -include drv/clock/src/subdir.mk
+-include app/sys/src/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -32,10 +35,10 @@ endif
 all: bootmanager.elf
 
 # Tool invocations
-bootmanager.elf: $(OBJS) $(USER_OBJS) C:\Users\MAHESH\Desktop\STM32_Project\Bootloader_V1\bootmanager_stm32f1x\sw/LinkerScript.ld
+bootmanager.elf: $(OBJS) $(USER_OBJS) D:\CB\ Learning\Bootloader\git\bootmanager_stm32f1x\sw/LinkerScript.ld
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU GCC Linker'
-	arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -T"C:/Users/MAHESH/Desktop/STM32_Project/Bootloader_V1/bootmanager_stm32f1x/sw/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "bootmanager.elf" @"objects.list" $(USER_OBJS) $(LIBS) -lm
+	arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -T"D:/CB Learning/Bootloader/git/bootmanager_stm32f1x/sw/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "bootmanager.elf" @"objects.list" $(USER_OBJS) $(LIBS) -lm
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
