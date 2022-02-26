@@ -7,3 +7,4 @@
 "drv/uart/src/uart.o"
 "myLib/queue/src/queue_static.o"
 "platform/comm/src/comm.o"
+"platform/serial_interface/src/serial_interface.o"

@@ -13,7 +13,8 @@ platform/comm/src/comm.o: ../platform/comm/src/comm.c \
  d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\gpio\api\gpio.h \
  d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\uart\api\uart.h \
  d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\uart\api\uart_config.h \
- d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\platform\comm\api\comm.h
+ d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\platform\comm\api\comm.h \
+ d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\platform\serial_interface\api\serial_interface.h
 
 D:/CB\ Learning/Bootloader/git/bootmanager_stm32f1x/sw/platform/hdr/platform.h:
 
@@ -44,3 +45,5 @@ d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\uart\api\uart.h:
 d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\uart\api\uart_config.h:
 
 d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\platform\comm\api\comm.h:
+
+d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\platform\serial_interface\api\serial_interface.h:

@@ -1,4 +1,5 @@
-app/sys/src/sys.o: ../app/sys/src/sys.c \
+platform/serial_interface/src/serial_interface.o: \
+ ../platform/serial_interface/src/serial_interface.c \
  D:/CB\ Learning/Bootloader/git/bootmanager_stm32f1x/sw/platform/hdr/platform.h \
  D:/CB\ Learning/Bootloader/git/bootmanager_stm32f1x/sw/drv/hdr/drv.h \
  D:/CB\ Learning/Bootloader/git/bootmanager_stm32f1x/sw/myLib/hdr/myLib.h \

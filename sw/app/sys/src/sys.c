@@ -22,7 +22,10 @@ void Sys_Init(void)
 
 void Sys_Run(void)
 {
-
+	while (1)
+	{
+		SI_Rx_Handler();
+	}
 }
 
 

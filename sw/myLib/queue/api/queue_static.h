@@ -55,6 +55,14 @@ extern uint8_t MyStaticQueue_DeQueue(MyQueueStatic* MyQueue, QUEUE_STATIC_ELEMEN
 
 extern uint8_t MyStaticQueue_Peek(MyQueueStatic* MyQueue, QUEUE_STATIC_ELEMENT_TYPE* Element);
 
+/**
+ *  @brief : This function is used to know whether the queue is empty or not
+ *  @param : MyQueueStatic*
+ *  @return: uint8_t - 0 - empty, 1 - not empty
+ */
+
+extern uint8_t MyStaticQueue_IsQueueEmpty(MyQueueStatic* MyQueue);
+
 #if 0
 /**
  *  @brief : This function is used to travese the queue.

@@ -2,7 +2,7 @@
 #include "../api/queue_static.h"
 
 
-static uint8_t IsQueueFull(MyQueueStatic* MyQueue)
+uint8_t IsQueueFull(MyQueueStatic* MyQueue)
 {
 	uint8_t retVal = 0;
 
@@ -14,7 +14,7 @@ static uint8_t IsQueueFull(MyQueueStatic* MyQueue)
 	return retVal;
 }
 
-static uint8_t IsQueueEmpty(MyQueueStatic* MyQueue)
+uint8_t MyStaticQueue_IsQueueEmpty(MyQueueStatic* MyQueue)
 {
 	uint8_t retVal = 0;
 
@@ -51,7 +51,7 @@ uint8_t MyStaticQueue_EnQueue(MyQueueStatic* MyQueue, QUEUE_STATIC_ELEMENT_TYPE 
 
 	if (!IsQueueFull(MyQueue))
 	{
-		if (IsQueueEmpty(MyQueue))
+		if (MyStaticQueue_IsQueueEmpty(MyQueue))
 		{
 			MyQueue->front = 0;
 			MyQueue->rear = 0;
@@ -75,7 +75,7 @@ uint8_t MyStaticQueue_DeQueue(MyQueueStatic* MyQueue, QUEUE_STATIC_ELEMENT_TYPE*
 {
 	uint8_t retVal = 1;
 
-	if (!IsQueueEmpty(MyQueue))
+	if (!MyStaticQueue_IsQueueEmpty(MyQueue))
 	{
 		*Element = MyQueue->Buffer[MyQueue->front];
 
@@ -103,7 +103,7 @@ uint8_t MyStaticQueue_Peek(MyQueueStatic* MyQueue, QUEUE_STATIC_ELEMENT_TYPE* El
 {
 	uint8_t retVal = 1;
 
-	if (!IsQueueEmpty(MyQueue))
+	if (!MyStaticQueue_IsQueueEmpty(MyQueue))
 	{
 		*Element = MyQueue->Buffer[MyQueue->front];
 	}

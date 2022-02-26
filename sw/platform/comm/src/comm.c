@@ -1,11 +1,20 @@
 #include <platform.h>
 
+/**
+ * @brief: uart handle used by the comm manager
+ */
 UART_Handle_T CommUart_Handle = NULL;
+
+/**
+ * @brief: comm buffer used for rx bytes
+ */
 MyQueueStatic CommBuffer;
 
-void Comm_Receive_Byte(uint8_t byte);
-void Comm_Receive_Handler(uint8_t byte);
-void Comm_Delay(void);
+/**
+ * @brief: This function enqueues the data received by uart receive buffer, this function is passed as a rx callback while uart configuration
+ */
+extern void Comm_Rx_Handler(uint8_t byte);
+
 
 void Comm_Init(void)
 {
@@ -37,21 +46,22 @@ void Comm_Init(void)
 	uart0.uart_Parity = DEVICE_UART_PARITY_NONE;
 	uart0.uart_Baudrate = DEVICE_UART_BR_9600;
 	uart0.uart_TxCallBack = 0;
-	uart0.uart_RxCallBack = Comm_Receive_Byte;
+	uart0.uart_RxCallBack = Comm_Rx_Handler;
 
 	CommUart_Handle = UART_SetConfig(&uart0);
 }
 
-void Comm_Receive_Byte(uint8_t byte)
+void Comm_Rx_Handler(uint8_t byte)
 {
 	MyStaticQueue_EnQueue(&CommBuffer, byte);
 }
 
-void Comm_Receive_Handler(uint8_t byte)
+uint8_t Comm_Rx_Byte(uint8_t* byte)
 {
-
+	return MyStaticQueue_DeQueue(&CommBuffer, byte);
 }
 
+#if 0
 void Comm_TxFrame(void)
 {
 	char string[] = "Test String\n\r";
@@ -72,3 +82,4 @@ void Comm_Delay(void)
 		for (j = 0; j < 500; j++);
 	}
 }
+#endif

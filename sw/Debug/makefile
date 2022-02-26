@@ -8,6 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include platform/serial_interface/src/subdir.mk
 -include platform/comm/src/subdir.mk
 -include myLib/queue/src/subdir.mk
 -include drv/uart/src/subdir.mk

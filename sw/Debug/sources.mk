@@ -22,4 +22,5 @@ drv/gpio/src \
 drv/uart/src \
 myLib/queue/src \
 platform/comm/src \
+platform/serial_interface/src \
 
