@@ -1,0 +1,6 @@
+﻿  serial_interface.c
+  main.c
+  Generating Code...
+  serial_interface.h
+x64\Debug\serial_interface.obj : warning LNK4042: object specified more than once; extras ignored
+  serial_interface.vcxproj -> D:\CB Learning\Bootloader\git\bootmanager_stm32f1x\stubs\serial_interface\x64\Debug\serial_interface.exe

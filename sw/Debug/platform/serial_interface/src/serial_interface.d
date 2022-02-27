@@ -1,5 +1,6 @@
 platform/serial_interface/src/serial_interface.o: \
  ../platform/serial_interface/src/serial_interface.c \
+ ../platform/serial_interface/src/../api/serial_interface_msg_def.h \
  D:/CB\ Learning/Bootloader/git/bootmanager_stm32f1x/sw/platform/hdr/platform.h \
  D:/CB\ Learning/Bootloader/git/bootmanager_stm32f1x/sw/drv/hdr/drv.h \
  D:/CB\ Learning/Bootloader/git/bootmanager_stm32f1x/sw/myLib/hdr/myLib.h \
@@ -16,6 +17,8 @@ platform/serial_interface/src/serial_interface.o: \
  d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\uart\api\uart_config.h \
  d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\platform\comm\api\comm.h \
  d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\platform\serial_interface\api\serial_interface.h
+
+../platform/serial_interface/src/../api/serial_interface_msg_def.h:
 
 D:/CB\ Learning/Bootloader/git/bootmanager_stm32f1x/sw/platform/hdr/platform.h:
 

@@ -7,7 +7,7 @@
  *                                                     Type definitions
  *********************************************************************************************************************************/
 
-/*< callback function pointer */
+/*< callback function pointer declaration */
 typedef void(*si_callback_ptr)(uint8_t*, uint8_t);
 
 

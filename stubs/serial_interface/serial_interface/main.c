@@ -4,11 +4,9 @@
 #include <stdio.h>
 #include "serial_interface.h"
 
-extern void SI_Rx_Handler(void);
-
 int main()
 {
-    SI_Rx_Handler();
+    //SI_Rx_Handler();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

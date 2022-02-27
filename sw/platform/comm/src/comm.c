@@ -15,6 +15,7 @@ MyQueueStatic CommBuffer;
  */
 extern void Comm_Rx_Handler(uint8_t byte);
 
+extern uint8_t Comm_Get_Checksum(uint8_t *frame, uint8_t size);
 
 void Comm_Init(void)
 {
@@ -59,6 +60,37 @@ void Comm_Rx_Handler(uint8_t byte)
 uint8_t Comm_Rx_Byte(uint8_t* byte)
 {
 	return MyStaticQueue_DeQueue(&CommBuffer, byte);
+}
+
+void Comm_Tx_Frame(uint8_t* frame, uint8_t size)
+{
+	uint8_t i;
+	UART_TxByte(CommUart_Handle, SI_STX);
+
+	for (i = 0; i < size; i++)
+	{
+		UART_TxByte(CommUart_Handle, frame[i]);
+	}
+
+	UART_TxByte(CommUart_Handle, Comm_Get_Checksum(frame, size));
+
+	UART_TxByte(CommUart_Handle, SI_ETX);
+}
+
+uint8_t Comm_Get_Checksum(uint8_t *frame, uint8_t size)
+{
+	uint8_t i;
+	uint16_t sum = 0;
+
+	for (i = 0; i < size; i++)
+	{
+		sum += frame[i];
+	}
+
+	sum = ~sum;
+	sum += 1;
+
+	return (sum & 0XFF);
 }
 
 #if 0
