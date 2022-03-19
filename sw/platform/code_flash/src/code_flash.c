@@ -7,8 +7,6 @@
 
 #include <platform.h>
 
-Code_Flash_States_T Code_Flash_State;
-
 Code_Flash_Info_T Code_Flash_Info;
 
 static void Code_Flash_Erase_Parition(uint8_t parition, uint8_t partition_count);
@@ -27,20 +25,6 @@ static void Code_Flash_Erase_Parition(uint8_t parition, uint8_t partition_count)
 	{
 		Flash_Erase_Parition(parition+i);
 	}
-}
-
-uint8_t Code_Flash_Program(uint8_t* data, uint8_t size)
-{
-#if 0
-	/**
-	 * NOTE: the start address for the flash write should always be an even address
-	 */
-
-	Flash_Write_Stream(Code_Flash_Info.Current_Address, data, size);
-
-	Code_Flash_Info.Current_Address += size;
-#endif
-	return False;
 }
 
 uint8_t Code_Flash_Rx_Record(uint8_t *byte, uint8_t size)

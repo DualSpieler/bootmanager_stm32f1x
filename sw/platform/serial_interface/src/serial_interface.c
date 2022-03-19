@@ -209,6 +209,14 @@ static void MsgInvalidId_SI_Callback(uint8_t* rx_bytes, uint8_t size)
 
 static void MsgReflashInfo_SI_Callback(uint8_t* rx_bytes, uint8_t size)
 {
+	uint8_t index = 0;
+
+	/*< send ack before jumping to application */
+	if (SI_Get_MessageIndex(MsgAck, &index))
+	{
+		SI_Msg[index].SI_CallBack((void*)0, 0);
+	}
+
 	Code_Flash_Reflash_Req();
 }
 
@@ -247,6 +255,14 @@ static void MsgReprogramming_SI_Callback(uint8_t* rx_bytes, uint8_t size)
 
 static void MsgJumpToApp_SI_Callback(uint8_t* rx_bytes, uint8_t size)
 {
+	uint8_t index = 0;
+
+	/*< send ack before jumping to application */
+	if (SI_Get_MessageIndex(MsgAck, &index))
+	{
+		SI_Msg[index].SI_CallBack((void*)0, 0);
+	}
+
 	void (*fptr)(void);
 	fptr = ((void(*)(void))(0x08005d70 | 0x1));
 	fptr();
