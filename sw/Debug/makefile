@@ -10,9 +10,11 @@ RM := rm -rf
 -include sources.mk
 -include platform/serial_interface/src/subdir.mk
 -include platform/comm/src/subdir.mk
+-include platform/code_flash/src/subdir.mk
 -include myLib/queue/src/subdir.mk
 -include drv/uart/src/subdir.mk
 -include drv/gpio/src/subdir.mk
+-include drv/flash/src/subdir.mk
 -include drv/core/src/subdir.mk
 -include drv/clock/src/subdir.mk
 -include app/sys/src/subdir.mk
@@ -53,6 +55,7 @@ post-build:
 	-@echo 'Generating binary and Printing size information:'
 	arm-none-eabi-objcopy -O binary "bootmanager.elf" "bootmanager.bin"
 	arm-none-eabi-size "bootmanager.elf"
+	arm-none-eabi-objcopy -O ihex "bootmanager.elf" "bootmanager.hex"
 	-@echo ' '
 
 .PHONY: all clean dependents

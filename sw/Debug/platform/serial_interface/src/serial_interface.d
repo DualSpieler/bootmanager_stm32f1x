@@ -15,8 +15,10 @@ platform/serial_interface/src/serial_interface.o: \
  d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\gpio\api\gpio.h \
  d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\uart\api\uart.h \
  d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\uart\api\uart_config.h \
+ d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\flash\api\flash.h \
  d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\platform\comm\api\comm.h \
- d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\platform\serial_interface\api\serial_interface.h
+ d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\platform\serial_interface\api\serial_interface.h \
+ d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\platform\code_flash\api\code_flash.h
 
 ../platform/serial_interface/src/../api/serial_interface_msg_def.h:
 
@@ -48,6 +50,10 @@ d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\uart\api\uart.h:
 
 d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\uart\api\uart_config.h:
 
+d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\flash\api\flash.h:
+
 d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\platform\comm\api\comm.h:
 
 d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\platform\serial_interface\api\serial_interface.h:
+
+d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\platform\code_flash\api\code_flash.h:

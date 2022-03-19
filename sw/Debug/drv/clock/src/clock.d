@@ -12,6 +12,7 @@ drv/clock/src/clock.o: ../drv/clock/src/clock.c \
  d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\gpio\api\gpio.h \
  d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\uart\api\uart.h \
  d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\uart\api\uart_config.h \
+ d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\flash\api\flash.h \
  ../drv/clock/src/../api/clock_cfg.h
 
 D:/CB\ Learning/Bootloader/git/bootmanager_stm32f1x/sw/drv/hdr/drv.h:
@@ -39,5 +40,7 @@ d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\gpio\api\gpio.h:
 d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\uart\api\uart.h:
 
 d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\uart\api\uart_config.h:
+
+d:\cb\ learning\bootloader\git\bootmanager_stm32f1x\sw\drv\flash\api\flash.h:
 
 ../drv/clock/src/../api/clock_cfg.h:

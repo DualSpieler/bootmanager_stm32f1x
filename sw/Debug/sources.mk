@@ -18,9 +18,11 @@ SUBDIRS := \
 app/sys/src \
 drv/clock/src \
 drv/core/src \
+drv/flash/src \
 drv/gpio/src \
 drv/uart/src \
 myLib/queue/src \
+platform/code_flash/src \
 platform/comm/src \
 platform/serial_interface/src \
 
