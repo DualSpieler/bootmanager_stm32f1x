@@ -40,6 +40,7 @@ uint8_t Code_Flash_Program(uint8_t* data, uint8_t size)
 
 	Code_Flash_Info.Current_Address += size;
 #endif
+	return False;
 }
 
 uint8_t Code_Flash_Rx_Record(uint8_t *byte, uint8_t size)

@@ -1358,7 +1358,7 @@ LOAD d:/software/compiler/workbench/plugins/fr.ac6.mcu.externaltools.arm-none.wi
                 0x000003a4       0x1d d:/software/compiler/workbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
 OUTPUT(bootmanager.elf elf32-littlearm)
 
-.debug_line     0x00000000     0x4ba1
+.debug_line     0x00000000     0x4ba2
  .debug_line    0x00000000       0x80 app/sys/src/startup_stm32.o
  .debug_line    0x00000080      0x7f1 app/sys/src/sys.o
  .debug_line    0x00000871      0x742 drv/clock/src/clock.o
@@ -1367,9 +1367,9 @@ OUTPUT(bootmanager.elf elf32-littlearm)
  .debug_line    0x00001ec9      0x727 drv/gpio/src/gpio.o
  .debug_line    0x000025f0      0x82c drv/uart/src/uart.o
  .debug_line    0x00002e1c      0x3ad myLib/queue/src/queue_static.o
- .debug_line    0x000031c9      0x833 platform/code_flash/src/code_flash.o
- .debug_line    0x000039fc      0x855 platform/comm/src/comm.o
- .debug_line    0x00004251      0x950 platform/serial_interface/src/serial_interface.o
+ .debug_line    0x000031c9      0x834 platform/code_flash/src/code_flash.o
+ .debug_line    0x000039fd      0x855 platform/comm/src/comm.o
+ .debug_line    0x00004252      0x950 platform/serial_interface/src/serial_interface.o
 
 .debug_info     0x00000000     0x716b
  .debug_info    0x00000000       0x22 app/sys/src/startup_stm32.o
