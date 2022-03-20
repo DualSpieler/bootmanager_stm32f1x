@@ -43,5 +43,6 @@ typedef enum HAL_Status
 #include "../clock/api/clock.h"
 #include "../gpio/api/gpio.h"
 #include "../uart/api/uart.h"
+#include "../flash/api/flash.h"
 
 #endif //__HAL_INCLUDES_H__

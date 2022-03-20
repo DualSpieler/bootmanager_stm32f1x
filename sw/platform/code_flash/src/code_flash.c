@@ -7,8 +7,11 @@
 
 #include <platform.h>
 
+<<<<<<< HEAD
 Code_Flash_States_T Code_Flash_State;
 
+=======
+>>>>>>> 6f03ce798ea094da02810eb13d6e62869730cc36
 Code_Flash_Info_T Code_Flash_Info;
 
 static void Code_Flash_Erase_Parition(uint8_t parition, uint8_t partition_count);
@@ -29,6 +32,7 @@ static void Code_Flash_Erase_Parition(uint8_t parition, uint8_t partition_count)
 	}
 }
 
+<<<<<<< HEAD
 uint8_t Code_Flash_Program(uint8_t* data, uint8_t size)
 {
 #if 0
@@ -43,6 +47,8 @@ uint8_t Code_Flash_Program(uint8_t* data, uint8_t size)
 	return False;
 }
 
+=======
+>>>>>>> 6f03ce798ea094da02810eb13d6e62869730cc36
 uint8_t Code_Flash_Rx_Record(uint8_t *byte, uint8_t size)
 {
 	uint8_t retval = True;

@@ -118,6 +118,8 @@ uint8_t SI_Rx_Callback(uint8_t* rx_bytes, uint8_t size)
 		{
 			/*< send only data byte to the callback function */
 			size--;
+
+			/*< remove the message id */
 			SI_Msg[index].SI_CallBack(&rx_bytes[1], size);
 		}
 		else
@@ -204,3 +206,65 @@ static void MsgInvalidId_SI_Callback(uint8_t* rx_bytes, uint8_t size)
 
 	Comm_Tx_Frame(&bytes[0], 1);
 }
+
+static void MsgReflashInfo_SI_Callback(uint8_t* rx_bytes, uint8_t size)
+{
+	uint8_t index = 0;
+
+	Code_Flash_Reflash_Req();
+
+	/*< send ack before jumping to application */
+	if (SI_Get_MessageIndex(MsgAck, &index))
+	{
+		SI_Msg[index].SI_CallBack((void*)0, 0);
+	}
+}
+
+static void MsgReprogramming_SI_Callback(uint8_t* rx_bytes, uint8_t size)
+{
+	uint8_t ack = False;
+
+	uint8_t index = 0;
+
+	if (SI_Validate_Checksum(rx_bytes, size))
+	{
+		/*< remove the checksum in the hex record */
+		size--;
+
+		if (Code_Flash_Rx_Record(rx_bytes, size))
+		{
+			ack = True;
+		}
+	}
+
+	if (ack)
+	{
+		if (SI_Get_MessageIndex(MsgAck, &index))
+		{
+			SI_Msg[index].SI_CallBack((void*)0, 0);
+		}
+	}
+	else
+	{
+		if (SI_Get_MessageIndex(MsgNack, &index))
+		{
+			SI_Msg[index].SI_CallBack((void*)0, 0);
+		}
+	}
+}
+
+static void MsgJumpToApp_SI_Callback(uint8_t* rx_bytes, uint8_t size)
+{
+	uint8_t index = 0;
+
+	/*< send ack before jumping to application */
+	if (SI_Get_MessageIndex(MsgAck, &index))
+	{
+		SI_Msg[index].SI_CallBack((void*)0, 0);
+	}
+
+	void (*fptr)(void);
+	fptr = ((void(*)(void))(0x08005d70 | 0x1));
+	fptr();
+}
+

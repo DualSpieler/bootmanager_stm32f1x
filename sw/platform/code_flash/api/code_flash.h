@@ -20,6 +20,7 @@
 #define CODE_FLASH_REC_START_LINEAR      ((uint8_t)0x05)
 #define CODE_FLASH_REC_END               ((uint8_t)0x01)
 
+<<<<<<< HEAD
 typedef enum Code_Flash_States_Tag
 {
 	CODE_FLASH_IDLE,
@@ -28,6 +29,8 @@ typedef enum Code_Flash_States_Tag
 }Code_Flash_States_T;
 
 
+=======
+>>>>>>> 6f03ce798ea094da02810eb13d6e62869730cc36
 typedef struct Code_Flash_Info_Tag
 {
 	uint32_t Current_Address;

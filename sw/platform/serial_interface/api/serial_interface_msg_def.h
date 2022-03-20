@@ -10,7 +10,10 @@
 		SI_MESSAGE(MsgAlive, 1U , "alive message") \
 		SI_MESSAGE(MsgAck, 1U, "acknowledge message") \
 		SI_MESSAGE(MsgNack, 1U, "not acknowledge message") \
-		SI_MESSAGE(MsgInvalidId, 1U, "invalid id received")
+		SI_MESSAGE(MsgInvalidId, 1U, "invalid id received") \
+		SI_MESSAGE(MsgReflashInfo, 2U, "reflash information (no of records)") \
+		SI_MESSAGE(MsgReprogramming, 2U, "reflash information (no of records)") \
+		SI_MESSAGE(MsgJumpToApp, 2U, "jump to application") \
 
  /**********************************************************************************************************************************
   *                                                   Type definitions
