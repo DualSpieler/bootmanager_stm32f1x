@@ -1,0 +1,4 @@
+﻿  flash_handler.c
+  main.c
+  Generating Code...
+  flash_handler.vcxproj -> D:\CB Learning\Bootloader\git\bootmanager_stm32f1x\stubs\flash_handler\x64\Debug\flash_handler.exe
